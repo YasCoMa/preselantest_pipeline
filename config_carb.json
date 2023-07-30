@@ -1,7 +1,7 @@
 { "step": 1, 
 "experiments": 
 [ 
-    { "folder_in": "carb_example_input/", 
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/carbapenase_app/data_input_paprec/", 
     "cell_type": "b",
     "bepipred3_output": "Bcell_linepitope_top_20pct_preds.fasta",
     "control_epitope": "vaxijen_epitope_prediction.tsv",

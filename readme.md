@@ -69,6 +69,11 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 - Run selection:
     - ````python3 antigenicity_prediction_s3.py config_carb.json ````
 
+### Run all steps
+- There is an example of shell file to execute all steps for the config_carb.json file, adapt it according to your configuration file name and the steps you want to run with PreSelAnTest
+1. ````chmod a+x run_all.sh ````
+2. ````bash run_all.sh ````
+
 ## Reference
 
 ## Bug Report
