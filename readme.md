@@ -19,11 +19,6 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 	- pip3 install python-Levenshtein
 	- pip3 install boruta
 	- pip3 install joblib
-
-
-"threshold_sim_iedb": 0.7, 
-    "threshold_alleles": 3, 
-    "threshold_rank": 2,
     
 ## Usage Instructions
 ### Preparation:
@@ -32,7 +27,7 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 3. Umcompress trained_models.tar.xz
 4. The main input file is the configuration in json, there is an example for b-cell (config_carb.json) and for t-cell (config.json). The second parameter of each function file is the step used in (1) and (2). Only in the prediction_s1.py, there is a third line command argument corresponding to the nemhcpanII tool path, only required if you are using for t-cell epitope prediction
 
-### Run Prediction of epitopes or parsing of prediction results:
+### (1) Run Prediction of epitopes or parsing of prediction results:
 - Configuration variables:  
     - folder_in: path to the working directory
     - cell_type: cell type for the epitopes (t-cell or b-cell), value is b or t
@@ -47,7 +42,7 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 - Run t-cell results parsing:
     - ````python3 prediction_s1.py config.json 2 /path/to/nemhcpanII ````
 
-### Run epitope curation:
+### (2) Run epitope curation:
 1. Configuration variables:  
     - folder_in: path to the working directory
     - cell_type: cell type for the epitopes (t-cell or b-cell), value is b or t
@@ -59,7 +54,7 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 3. Run vaxijen2 summary output table parsing (only check Summary Mode in web server, copy the results in the webpage and save as vaxijen_{epitope|protein}_results.txt in {folder_in}/), this step must be made after the selection process:
     - ````python3 curation_s2.py config_carb.json 2 ````
 
-### Run epitope antigenicity prediction:
+### (3) Run epitope antigenicity prediction:
 - Configuration variables:  
     - folder_in: path to the working directory
     - cell_type: cell type for the epitopes (t-cell or b-cell), value is b or t
