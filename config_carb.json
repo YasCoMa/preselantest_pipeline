@@ -1,0 +1,11 @@
+{ "step": 1, 
+"experiments": 
+[ 
+    { "folder_in": "carb_example_input/", 
+    "cell_type": "b",
+    "bepipred3_output": "Bcell_linepitope_top_20pct_preds.fasta",
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": ""
+    }
+]
+}

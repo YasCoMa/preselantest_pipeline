@@ -1,0 +1,12 @@
+>peptide_1 Overall Protective Antigen Prediction = 1.5303 ( Probable ANTIGEN ).
+>peptide_2 Overall Protective Antigen Prediction = 0.1036 ( Probable NON-ANTIGEN ).
+>peptide_3 Overall Protective Antigen Prediction = 0.4904 ( Probable NON-ANTIGEN ).
+>peptide_4 Overall Protective Antigen Prediction = 0.5675 ( Probable NON-ANTIGEN ).
+>peptide_5 Overall Protective Antigen Prediction = 0.5664 ( Probable NON-ANTIGEN ).
+>peptide_6 Overall Protective Antigen Prediction = 2.0058 ( Probable ANTIGEN ).
+>peptide_7 Overall Protective Antigen Prediction = 0.2217 ( Probable NON-ANTIGEN ).
+>peptide_8 Overall Protective Antigen Prediction = 0.9299 ( Probable ANTIGEN ).
+>peptide_9 Overall Protective Antigen Prediction = 0.0747 ( Probable NON-ANTIGEN ).
+>peptide_10 Overall Protective Antigen Prediction = 0.0663 ( Probable NON-ANTIGEN ).
+>peptide_11 Overall Protective Antigen Prediction = 1.5483 ( Probable ANTIGEN ).
+>peptide_12 Overall Protective Antigen Prediction = 1.2225 ( Probable ANTIGEN ).

@@ -1,0 +1,2 @@
+selected_features	mode	classifier	mean_accuracy	mean_f1	mean_precision	mean_recall	stdev_accuracy	stdev_f1	stdev_precision	stdev_recall
+l1_f6,l2_f5,l3_f5	auto	randomForest	0.51060	0.54369	0.49000	0.54152	0.09102	0.06765	0.12321	0.05753

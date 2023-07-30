@@ -1,0 +1,22 @@
+{ "step": 2, 
+"experiments": 
+[ 
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/data_organisms/paeruginosa/", 
+    "cell_type": "t",
+    "threshold_sim_iedb": 0.7, 
+    "threshold_alleles": 3, 
+    "threshold_rank": 2,
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv",
+    "hlas": "DRB1_0802,DRB1_0801,DRB1_0402,DRB1_0411,DRB1_0101,DRB1_0301,DRB1_0405,DRB1_0701,DRB1_0901,DRB1_1101,DRB1_1201,DRB1_1301,DRB1_1302,DRB1_1501,DRB3_0101,DRB3_0202,DRB4_0101,DRB5_0101,HLA-DQA10501-DQB10201,HLA-DQA10501-DQB10301,HLA-DQA10301-DQB10302,HLA-DQA10401-DQB10402,HLA-DQA10101-DQB10501,HLA-DQA10102-DQB10602,HLA-DPA10201-DPB10101,HLA-DPA10103-DPB10201,HLA-DPA10301-DPB10402,HLA-DPA10201-DPB10501" }, 
+
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/data_organisms/saureus/", 
+    "cell_type": "t",
+    "threshold_sim_iedb": 0.7, 
+    "threshold_alleles": 3, 
+    "threshold_rank": 2,
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv",
+    "hlas": "DRB1_0802,DRB1_0801,DRB1_0402,DRB1_0411,DRB1_0101,DRB1_0301,DRB1_0405,DRB1_0701,DRB1_0901,DRB1_1101,DRB1_1201,DRB1_1301,DRB1_1302,DRB1_1501,DRB3_0101,DRB3_0202,DRB4_0101,DRB5_0101,HLA-DQA10501-DQB10201,HLA-DQA10501-DQB10301,HLA-DQA10301-DQB10302,HLA-DQA10401-DQB10402,HLA-DQA10101-DQB10501,HLA-DQA10102-DQB10602,HLA-DPA10201-DPB10101,HLA-DPA10103-DPB10201,HLA-DPA10301-DPB10402,HLA-DPA10201-DPB10501" } 
+] 
+}

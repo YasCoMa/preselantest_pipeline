@@ -1,0 +1,3 @@
+selected_features	mode	classifier	mean_accuracy	mean_f1	mean_precision	mean_recall	stdev_accuracy	stdev_f1	stdev_precision	stdev_recall
+l1_f6,l2_f2,l2_f3,l2_f6,l3_f6,l4_f1,l4_f2,l4_f6,l5_f1,l5_f6,l6_f1,l6_f6,l7_f6,l8_f6,l9_f1,l9_f6,l10_f1,l10_f6,l11_f1,l11_f6,l13_f6,l14_f6	auto	randomForest	0.58441	0.58651	0.58345	0.58675	0.04646	0.03548	0.06075	0.03747
+l4_f3,l6_f1,l10_f1	auto	GradientBoosting	0.58441	0.58651	0.58345	0.58675	0.04646	0.03548	0.06075	0.03747
