@@ -329,7 +329,7 @@ class Curation:
                     peps[id_]=[l]
             f.close()
             
-            if( os.path.isfile(f'{folder_in}vaxijen_{m}_results.txt') ):
+            if( os.path.isfile(f'{dir_out}vaxijen_{m}_results.txt') ):
                 f=open(f'{dir_out}vaxijen_{m}_results.txt','r')
                 for line in f:
                     l=line.replace('\n','').split(' ')
@@ -341,8 +341,9 @@ class Curation:
                         if( float(l[6]) >= 0.7):
                             cl='1'
                             namecl='antigen'
-                            
-                        peps[id_]+=[l[6], cl, namecl]
+                        
+                        if( id_ in peps.keys() ):
+                            peps[id_]+=[l[6], cl, namecl]
                 f.close()
                 
                 f=open(f'{dir_out}vaxijen_{m}_prediction.tsv','w')

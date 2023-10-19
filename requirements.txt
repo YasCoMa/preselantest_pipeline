@@ -1,0 +1,8 @@
+numpy
+sklearn
+pandas
+matplotlib
+statistics
+python-Levenshtein
+boruta
+joblib

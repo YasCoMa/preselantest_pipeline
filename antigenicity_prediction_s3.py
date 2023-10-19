@@ -1272,16 +1272,29 @@ class AntigenicityTest:
                 d=f"{folder}/{prefix}_antigenicity_prediction"
                 
                 if( not os.path.isdir(d) ):
+                    print("---> Building datasets")
                     self.build_exps_datasets(d) 
+                    
+                    print("---> Selecting models")
                     self.select_models(d)
+                    
+                    print("---> Preparing test set")
                     self.prepare_testeset(d)
+                    
+                    print("---> Using models to predict on new data separated")
                     self.test_models_separated(d)
+                    
+                    print("---> Using models to predict on new data by feature selection")
                     self.test_models_feature_selection(d)
                 
+                print("---> Compiling results")
                 self.compile_results(folder, d, c)
                 if( (c['control_protein'] != None and c['control_protein'] != '') or (c['control_epitope'] != None and c['control_epitope'] != '') ):
                     if( os.path.isfile(c['control_protein']) or os.path.isfile(c['control_epitope']) ):
-                        self.analyze_compiled(d)
+                        #print("---> Analyzing compiled results")
+                        #self.analyze_compiled(d)
+                        
+                        print("---> Comparing with the given reference prediction")
                         self.get_consensus_antigenic_epitopes(d, folder_in)
         else:
             print('Error: This module was not properly initialized')
