@@ -15,8 +15,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+def warn(*args, **kwargs):
+    pass
 import warnings
-warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.warn = warn
 
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
@@ -357,8 +359,9 @@ class Implementation_vaxijenModified:
             for j in range(6):
                 mean_=0
                 for aa in seq:
-                    el=self.descriptors[aa]
-                    mean_+=el[j]
+                    if(aa in self.descriptors.keys()):
+                        el=self.descriptors[aa]
+                        mean_+=el[j]
                 mean_=mean_/n
                 
                 s=0
@@ -667,7 +670,6 @@ class EvaluationModels:
                 
                 X.append(aux)
                 
-            print(m, len(X[0]), len(feas))
             X=pd.DataFrame(X)
             #print(X)
             X.columns=feas
@@ -726,7 +728,6 @@ class EvaluationModels:
                 
                 X.append(aux)
                 
-            print(m, len(X[0]), len(feas))
             X=pd.DataFrame(X)
             #print(X)
             X.columns=feas
@@ -933,7 +934,7 @@ class AntigenicityTest:
                             mode=name.split('-')[2]
                             lag=name.split('-')[3].split('_')[0]
                             df=pd.read_csv(folder+"/"+d+"/"+m+"/"+mode+'_dataset.tsv',sep='\t')
-                            print(ds, d, m, mode, lag)
+                            #print(ds, d, m, mode, lag)
                             filt=df[ df['lag']==lag ]
                             if(len(filt)>0):
                                 
@@ -1194,55 +1195,47 @@ class AntigenicityTest:
         agg_epitope = []
         prots=set()
         res = pd.read_csv( f"{dir_out}table_final_proteins_epitopes.tsv", sep='\t')
+        white_list = []
         for i in res.index:
             ide = res.loc[i, 'epitope_id'] 
             idp = res.loc[i, 'protein'].split(',')[0]
             
-            pape = cnt[ide]['c1'] > 1
-            agge = cnt[ide]['cref'] > 1
-            papp = cnt[idp]['c1'] > 1
-            aggp = cnt[idp]['cref'] > 1
-            
-            """
-            refe = aux[ (aux['identifier']==ide) & (aux['predictor']=='vaxijen_server') ].reset_index().loc[0, 'class']
-            pape = len( aux[ (aux['identifier']==ide) & (aux['predictor']!='vaxijen_server') & (aux['class']==1) ] ) > 1
-            agge = len( aux[ (aux['identifier']==ide) & (aux['predictor']!='vaxijen_server') & (aux['class']==refe) ] ) > 1
-            
-            
-            refp = aux[ (aux['identifier']==idp) & (aux['predictor']=='vaxign-ml') ].reset_index().loc[0, 'class']
-            papp = len( aux[ (aux['identifier']==idp) & (aux['predictor']!='vaxign-ml') & (aux['class']==1) ] ) > 1
-            aggp = len( aux[ (aux['identifier']==idp) & (aux['predictor']!='vaxign-ml') & (aux['class']==refp) ] ) > 1
-            """
-            
-            if( pape ):
-                pape=1
-            else:
-                pape=0
+            if( ide in cnt ):
+                pape = cnt[ide]['c1'] > 1
+                agge = cnt[ide]['cref'] > 1
+                papp = cnt[idp]['c1'] > 1
+                aggp = cnt[idp]['cref'] > 1
                 
-            if( agge ):
-                agge=1
-            else:
-                agge=0
+                if( pape ):
+                    pape=1
+                else:
+                    pape=0
+                    
+                if( agge ):
+                    agge=1
+                else:
+                    agge=0
+                    
+                if( papp ):
+                    papp=1
+                else:
+                    papp=0
+                    
+                if( aggp ):
+                    aggp=1
+                else:
+                    aggp=0
+                    
+                paprec_epitope.append(pape)
+                paprec_protein.append(papp)
                 
-            if( papp ):
-                papp=1
-            else:
-                papp=0
-                
-            if( aggp ):
-                aggp=1
-            else:
-                aggp=0
-                
-            paprec_epitope.append(pape)
-            paprec_protein.append(papp)
-            
-            agg_epitope.append(agge)
-            agg_protein.append(aggp)
-            if(agge==1 and aggp==1):
-                prots.add(idp)
-                  
-         
+                agg_epitope.append(agge)
+                agg_protein.append(aggp)
+                if(agge==1 and aggp==1):
+                    prots.add(idp)
+                white_list.append(i)
+        
+        res = res.iloc[white_list, :]
         res['agreement_protein_antigenic'] = agg_protein
         res['agreement_epitope_antigenic'] = agg_epitope
         res['paprec_protein_antigenic'] = paprec_protein
@@ -1268,6 +1261,7 @@ class AntigenicityTest:
                 c['control_epitope'] = folder_in+'results/'+c['control_epitope']
                 
                 prefix = folder.split('/')[-1].split('_')[0]
+                print( f"\n------------------------ Processing {prefix} ----------------------")
                 d = f"{folder}/{prefix}_antigenicity_prediction"
                 #if( not os.path.isdir(d) ):
                 self.config_path_models( folder_in )
