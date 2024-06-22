@@ -128,7 +128,7 @@ class Curation:
             similar=0
             for target in pubepis.keys():
                 identity = Levenshtein.ratio(epi, target)
-                if(identity > cutoff):
+                if(identity >= cutoff):
                     epi_out.add(epi)
                     
                     similar+=1
@@ -323,10 +323,11 @@ class Curation:
             f=open( f'{dir_out}selected_{m}s.fasta','r')
             for line in f:
                 l=line.replace('\n','')
-                if(l.startswith('>')):
-                    id_=l[1:]
-                else:
-                    peps[id_]=[l]
+                if(l!=""):
+                    if(l.startswith('>')):
+                        id_=l[1:]
+                    else:
+                        peps[id_]=[l]
             f.close()
             
             if( os.path.isfile(f'{dir_out}vaxijen_{m}_results.txt') ):

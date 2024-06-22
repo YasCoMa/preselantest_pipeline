@@ -1,0 +1,34 @@
+{ "step": 3, 
+"experiments": 
+[ 
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/eskape_iedb_eval/efaecium/", 
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv"
+    }, 
+
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/eskape_iedb_eval/saureus/", 
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv"
+    }, 
+
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/eskape_iedb_eval/kpneumoniae/", 
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv"
+    }, 
+
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/eskape_iedb_eval/abaumannii/", 
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv"
+    }, 
+
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/eskape_iedb_eval/paeruginosa/", 
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv"
+    }, 
+
+    { "folder_in": "/mnt/085dd464-7946-4395-acfd-e22026d52e9d/home/yasmmin/Dropbox/phd/drug_target_posdoc/vaxijen/new_application/eskape_iedb_eval/enterobacter/", 
+    "control_epitope": "vaxijen_epitope_prediction.tsv",
+    "control_protein": "selected_proteins.result.tsv"
+    }
+] 
+}

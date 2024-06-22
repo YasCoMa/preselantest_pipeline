@@ -1267,25 +1267,25 @@ class AntigenicityTest:
                 c['control_protein'] = folder_in+'results/'+c['control_protein']
                 c['control_epitope'] = folder_in+'results/'+c['control_epitope']
                 
-                self.config_path_models( folder_in)
                 prefix = folder.split('/')[-1].split('_')[0]
-                d=f"{folder}/{prefix}_antigenicity_prediction"
+                d = f"{folder}/{prefix}_antigenicity_prediction"
+                #if( not os.path.isdir(d) ):
+                self.config_path_models( folder_in )
                 
-                if( not os.path.isdir(d) ):
-                    print("---> Building datasets")
-                    self.build_exps_datasets(d) 
-                    
-                    print("---> Selecting models")
-                    self.select_models(d)
-                    
-                    print("---> Preparing test set")
-                    self.prepare_testeset(d)
-                    
-                    print("---> Using models to predict on new data separated")
-                    self.test_models_separated(d)
-                    
-                    print("---> Using models to predict on new data by feature selection")
-                    self.test_models_feature_selection(d)
+                print("---> Building datasets")
+                self.build_exps_datasets(d) 
+                
+                print("---> Selecting models")
+                self.select_models(d)
+                
+                print("---> Preparing test set")
+                self.prepare_testeset(d)
+                
+                print("---> Using models to predict on new data separated")
+                self.test_models_separated(d)
+                
+                print("---> Using models to predict on new data by feature selection")
+                self.test_models_feature_selection(d)
                 
                 print("---> Compiling results")
                 self.compile_results(folder, d, c)

@@ -14,7 +14,7 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 ## Requirements:
 * Python packages needed:
 	- pip3 install numpy
-	- pip3 install sklearn
+	- pip3 install sklearn=1.2.2
 	- pip3 install pandas
 	- pip3 install matplotlib
 	- pip3 install statistics
@@ -27,7 +27,7 @@ We have developed a comprehensive pipeline for prediction, simple curation and a
 1. ````git clone https://github.com/YasCoMa/preselantest_pipeline.git````
 2. ````cd preselantest_pipeline````
 3. ````pip3 install -r requirements.txt````
-3. Umcompress trained_models.tar.xz
+3. Umcompress trained_models.tar.xz (Provided pickle models were generated on python 3.9 with sklearn 1.2.2)
 4. The main input file is the configuration in json, there is an example for b-cell (config_carb.json) and for t-cell (config.json). The second parameter of each function file is the step used in (1) and (2). Only in the prediction_s1.py, there is a third line command argument corresponding to the nemhcpanII tool path, only required if you are using for t-cell epitope prediction
 
 ### (1) Run Prediction of epitopes or parsing of prediction results:
