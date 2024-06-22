@@ -316,7 +316,7 @@ class Curation:
         
     def parse_vaxijen2_server_results(self, folder_in):
         dir_out=f"{folder_in}results/"
-        
+        print(folder_in)
         ms=['epitope','protein']
         for m in ms:
             peps={}
@@ -350,7 +350,8 @@ class Curation:
                 f=open(f'{dir_out}vaxijen_{m}_prediction.tsv','w')
                 f.write('pepid\tsequence\tvalue\tclass\tclass_name\n')
                 for k in peps.keys():
-                    f.write('%s\t%s\t%s\t%s\t%s\n' %(k, peps[k][0], peps[k][1], peps[k][2], peps[k][3] ) )
+                    if( len(peps[k]) > 1 ):
+                        f.write('%s\t%s\t%s\t%s\t%s\n' %(k, peps[k][0], peps[k][1], peps[k][2], peps[k][3] ) )
                 f.close()  
             else:
                 print(f'Error: {dir_out}vaxijen_{m}_results.txt not found')      

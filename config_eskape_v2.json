@@ -1,32 +1,38 @@
 { "step": 3, 
 "experiments": 
 [ 
-    { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/efaecium/", 
+    { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/efaecium/",
+    "cell_type": "b", 
     "control_epitope": "vaxijen_epitope_prediction.tsv",
     "control_protein": "selected_proteins.result.tsv"
     }, 
 
     { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/saureus/", 
+    "cell_type": "b",
     "control_epitope": "vaxijen_epitope_prediction.tsv",
     "control_protein": "selected_proteins.result.tsv"
     }, 
 
     { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/kpneumoniae/", 
+    "cell_type": "b",
     "control_epitope": "vaxijen_epitope_prediction.tsv",
     "control_protein": "selected_proteins.result.tsv"
     }, 
 
     { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/abaumannii/", 
+    "cell_type": "b",
     "control_epitope": "vaxijen_epitope_prediction.tsv",
     "control_protein": "selected_proteins.result.tsv"
     }, 
 
-    { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/paeruginosa/", 
+    { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/paeruginosa/",
+    "cell_type": "b", 
     "control_epitope": "vaxijen_epitope_prediction.tsv",
     "control_protein": "selected_proteins.result.tsv"
     }, 
 
     { "folder_in": "/home/ymartins/Documents/personal/antigenicity/eskape_iedb_eval/enterobacter/", 
+    "cell_type": "b",
     "control_epitope": "vaxijen_epitope_prediction.tsv",
     "control_protein": "selected_proteins.result.tsv"
     }
