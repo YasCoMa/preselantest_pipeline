@@ -143,7 +143,7 @@ class Curation:
         sorted_list = sorted( report.items(), key=lambda kv: kv[1], reverse=True )  
         
         g = open( f"{dir_out}result_overlapping_iedb.tsv","w")
-        g.write('epitope\tnumber_human_proteins\tepitope_iedb_info\n') 
+        g.write('epitope\tnumber_matches\tepitope_iedb_info\n') 
         g.close()     
         for epi in sorted_list:
             with open( f"{dir_out}result_overlapping_iedb.tsv","a") as gf:
